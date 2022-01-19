@@ -1,0 +1,251 @@
+<?xml version="1.0" ?>
+
+<robot name="testbot">
+    <link name="base">
+        <visual>
+            <geometry>
+                <mesh filename="package://testbot_description/meshes/visual/link0.stl" />
+            </geometry>
+            <material name="gray">
+                <color rgba="0.6 0.6 0.6 1"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://testbot_description/meshes/collision/link0.stl" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="link1">
+        <visual>
+            <geometry>
+                <mesh filename="package://testbot_description/meshes/visual/link1.stl" />
+            </geometry>
+            <material name="gray">
+                <color rgba="0.7 0.7 0.7 1"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://testbot_description/meshes/collision/link1.stl" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint1" type="revolute">
+        <origin rpy="1.57079632679 0 0" xyz="0 0 0.075" />
+        <parent link="base" />
+        <child link="link1" />
+        <axis xyz="0 1 0" />
+        <limit effort="87" lower="-2.9671" upper="2.9671" velocity="2.3925" />
+    </joint>
+    <link name="link2">
+        <visual>
+            <geometry>
+                <mesh filename="package://testbot_description/meshes/visual/link2.stl" />
+            </geometry>
+            <material name="gray">
+                <color rgba="0.8 0.8 0.8 1"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://testbot_description/meshes/collision/link2.stl" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint2" type="revolute">
+        <origin rpy="1.57079632679 0 1.57079632679" xyz="0 0.08 0.06" />
+        <parent link="link1" />
+        <child link="link2" />
+        <axis xyz="0 1 0" />
+        <limit effort="87" lower="0" upper="2.9671" velocity="2.3925" />
+    </joint>
+    <link name="link3">
+        <visual>
+            <geometry>
+                <mesh filename="package://testbot_description/meshes/visual/link3.stl" />
+            </geometry>
+            <material name="gray">
+                <color rgba="0.5 0.5 0.5 1"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://testbot_description/meshes/collision/link3.stl" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="fixed1" type="fixed">
+        <origin rpy="1.57079632679 0 0" xyz="0 0.08 0.065" />
+        <parent link="link2" />
+        <child link="link3" />
+    </joint>
+    <link name="link4">
+        <visual>
+            <geometry>
+                <mesh filename="package://testbot_description/meshes/visual/link4.stl" />
+            </geometry>
+            <material name="gray">
+                <color rgba="0.4 0.4 0.4 1"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://testbot_description/meshes/collision/link4.stl" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="fixed2" type="fixed">
+        <origin rpy="-1.57079632679 0 3.14159265359" xyz="0 0.37 0.08" />
+        <parent link="link3" />
+        <child link="link4" />
+    </joint>
+    <link name="link5">
+        <visual>
+            <geometry>
+                <mesh filename="package://testbot_description/meshes/visual/link5.stl" />
+            </geometry>
+            <material name="gray">
+                <color rgba="0.9 0.9 0.9 1"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://testbot_description/meshes/collision/link5.stl" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint3" type="revolute">
+        <origin rpy="3.14159265359 0 0" xyz="0 0 0" />
+        <parent link="link4" />
+        <child link="link5" />
+        <axis xyz="0 1 0" />
+        <limit effort="87" lower="-1.8326" upper="1.8326" velocity="2.3925" />
+    </joint>
+    <link name="link6">
+        <visual>
+            <geometry>
+                <mesh filename="package://testbot_description/meshes/visual/link6.stl" />
+            </geometry>
+            <material name="gray">
+                <color rgba="0.7 0.7 0.7 1"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://testbot_description/meshes/collision/link6.stl" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="fixed3" type="fixed">
+        <origin rpy="1.57079632679 0 0" xyz="0 0.055 0.075" />
+        <parent link="link5" />
+        <child link="link6" />
+    </joint>
+    <link name="link7">
+        <visual>
+            <geometry>
+                <mesh filename="package://testbot_description/meshes/visual/link7.stl" />
+            </geometry>
+            <material name="gray">
+                <color rgba="0.5 0.5 0.5 1"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://testbot_description/meshes/collision/link7.stl" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="fixed4" type="fixed">
+        <origin rpy="-1.57079632679 0 3.14159265359" xyz="0 0.32 0.06" />
+        <parent link="link6" />
+        <child link="link7" />
+    </joint>
+    <link name="link8">
+        <visual>
+            <geometry>
+                <mesh filename="package://testbot_description/meshes/visual/link8.stl" />
+            </geometry>
+            <material name="gray">
+                <color rgba="0.3 0.3 0.3 1"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://testbot_description/meshes/collision/link8.stl" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint4" type="revolute">
+        <origin rpy="0 0 0" xyz="0 -0.028 0" />
+        <parent link="link7" />
+        <child link="link8" />
+        <axis xyz="0 1 0" />
+        <limit effort="12" lower="-1.8326" upper="1.8326" velocity="2.3925" />
+    </joint>
+    <link name="link9">
+        <visual>
+            <geometry>
+                <mesh filename="package://testbot_description/meshes/visual/link9.stl" />
+            </geometry>
+            <material name="gray">
+                <color rgba="0.8 0.8 0.8 1"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://testbot_description/meshes/collision/link9.stl" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="fixed5" type="fixed">
+        <origin rpy="1.57079632679 0 3.14159265359" xyz="0 -0.0425 -0.06" />
+        <parent link="link8" />
+        <child link="link9" />
+    </joint>
+    <link name="link10">
+        <visual>
+            <geometry>
+                <mesh filename="package://testbot_description/meshes/visual/link10.stl" />
+            </geometry>
+            <material name="gray">
+                <color rgba="0.6 0.6 0.6 1"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://testbot_description/meshes/collision/link10.stl" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint5" type="revolute">
+        <origin rpy="3.14159265359 0 0" xyz="0 0 0" />
+        <parent link="link9" />
+        <child link="link10" />
+        <axis xyz="0 1 0" />
+        <limit effort="12" lower="-1.8326" upper="1.8326" velocity="2.3925" />
+    </joint>
+    <link name="link11">
+        <visual>
+            <geometry>
+                <mesh filename="package://testbot_description/meshes/visual/link11.stl" />
+            </geometry>
+            <material name="gray">
+                <color rgba="0.3 0.3 0.3 1"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://testbot_description/meshes/collision/link11.stl" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint6" type="revolute">
+        <origin rpy="-1.57079632679 0 0" xyz="0 0.04 -0.065" />
+        <parent link="link10" />
+        <child link="link11" />
+        <axis xyz="0 1 0" />
+        <limit effort="12" lower="-1.8326" upper="1.8326" velocity="2.3925" />
+    </joint>
+</robot>
